@@ -9,20 +9,6 @@ use Socket;
 
 use feature qw(say);
 
-sub _str {
-    my $self = shift;
-    my $str = ""; # fix SUPER class "uninitialized value" warning
-    my $tmp;
-
-    read $self->{fh}, $tmp, 1;
-    while (ord $tmp > 0) {
-        $str .= $tmp;
-        read $self->{fh}, $tmp, 1;
-    }
-
-    return $str;
-}
-
 # https://www.perl.com/article/creating-ip-address-tools-from-scratch/
 sub long2ip {
     my $decimal = shift;
