@@ -58,7 +58,7 @@ perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 
 ```shell
 brew install perl cpanm
-cpanm MaxMind::DB::Writer IP::QQWry::Decoded
+cpanm --notest MaxMind::DB::Writer IP::QQWry::Decoded
 
 #请自行下载最新版本的 qqwry.dat
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
