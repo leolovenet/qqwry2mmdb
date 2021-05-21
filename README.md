@@ -33,10 +33,13 @@ $tree->insert_range("192.168.1.1", "192.168.1.1", {
 
 ## 安装 qqwry.mmdb 数据库, 配置 Wireshark
 
-配置 Wireshark 指定包含 qqwry.mmdb 的目录(⚠️此处是需要指明包含数据库文件的目录，不是数据库文件的绝对路径⚠️) 
+配置 Wireshark 指定包含 qqwry.mmdb 的目录(⚠️此处是需要指明包含数据库文件的目录，不是数据库文件的绝对路径⚠️)
 
 ![WireShark 配置使用纯真网络IP数据库](./wireshark-config.jpg)
 
+点击OK以后，重启 wireshark 抓包，你会发现在 “Packet List” 面版，看不到我上面截图中的那些中文IP信息，还需要进行下面的操作
+
+![WireShark apply GeoIP As column](./wireshark-config-as-column.jpg)
 ## 安装 qqwry2mmdb.pl，自己生成特定数据库文件
 
 MaxMind DB 自家的 [数据库生成工具](https://github.com/maxmind/MaxMind-DB-Writer-perl) 是基于 Perl 语言编写，因此本项目也是用 Perl 来实现(本想为了便携性用Go重写，但是看了看工作量又懒的再造轮子了)，使用并扩展了 [IP::QQWry](https://metacpan.org/pod/IP::QQWry) 库来读取纯真IP库的所有记录。
@@ -48,7 +51,7 @@ MaxMind DB 自家的 [数据库生成工具](https://github.com/maxmind/MaxMind-
 ```shell
 yum -y install perl perl-CPAN
 curl -L https://cpanmin.us | perl - App::cpanminus
-cpanm --force MaxMind::DB::Writer IP::QQWry::Decoded
+cpanm --notest --force MaxMind::DB::Writer IP::QQWry::Decoded
 
 #请自行下载最新版本的 qqwry.dat
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
