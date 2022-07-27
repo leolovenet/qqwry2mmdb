@@ -50,10 +50,22 @@ MaxMind DB 自家的 [数据库生成工具](https://github.com/maxmind/MaxMind-
 
 ```shell
 yum -y install perl perl-CPAN
-curl -L https://cpanmin.us | perl - App::cpanminus
+
+#使用 cpan 安装 cpanm 命令
+cpan App::cpanminus
+#或者, 使用 curl 安装 cpanm 命令
+#curl -L https://cpanmin.us | perl - App::cpanminus
+
+#使用 cpanm 命令安装所需模块
 cpanm --notest --force MaxMind::DB::Writer IP::QQWry::Decoded
 
+#下载安装 qqwry2mmdb
+wget https://github.com/leolovenet/qqwry2mmdb/archive/refs/heads/master.zip
+unzip master.zip
+cd qqwry2mmdb-master
+
 #请自行下载最新版本的 qqwry.dat
+#请注意，qqwry2mmdb.pl 脚本依赖本项目中的 lib/IP/QQWry/Dumper.pm 库文件
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 ```
 
@@ -63,7 +75,13 @@ perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 brew install perl cpanm
 cpanm --notest MaxMind::DB::Writer IP::QQWry::Decoded
 
+#下载安装 qqwry2mmdb
+wget https://github.com/leolovenet/qqwry2mmdb/archive/refs/heads/master.zip
+unzip master.zip
+cd qqwry2mmdb-master
+
 #请自行下载最新版本的 qqwry.dat
+#请注意，qqwry2mmdb.pl 脚本依赖本项目中的 lib/IP/QQWry/Dumper.pm 库文件
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 ```
 
