@@ -72,7 +72,7 @@ perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 ### macOS
 
 ```shell
-brew install perl cpanm
+brew install cpanm
 cpanm --notest MaxMind::DB::Writer IP::QQWry::Decoded
 
 #下载安装 qqwry2mmdb
