@@ -8,6 +8,7 @@ use strict;
 use warnings FATAL => 'all';
 
 use IP::QQWry::Dumper;
+no warnings 'deprecated';
 use MaxMind::DB::Writer::Tree;
 
 use feature qw(say);
