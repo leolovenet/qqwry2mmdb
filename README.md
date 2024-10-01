@@ -53,7 +53,7 @@ yum -y install perl perl-CPAN
 curl -L https://cpanmin.us | perl - App::cpanminus
 cpanm --notest --force MaxMind::DB::Writer IP::QQWry::Decoded
 
-#请自行下载最新版本的 qqwry.dat
+#请自行下载最新版本的 qqwry.dat (例如这里: https://github.com/FW27623/qqwry)
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 ```
 
@@ -63,7 +63,7 @@ perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 brew install perl cpanm
 cpanm --notest MaxMind::DB::Writer IP::QQWry::Decoded
 
-#请自行下载最新版本的 qqwry.dat
+#请自行下载最新版本的 qqwry.dat (例如这里: https://github.com/FW27623/qqwry)
 perl qqwry2mmdb.pl /your/save/path/of/qqwry.dat
 ```
 
